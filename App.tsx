@@ -6,19 +6,18 @@
  */
 
 import React from 'react';
-import {
-  StyleSheet,
-} from 'react-native';
+import {StyleSheet} from 'react-native';
 
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HelloWord from './HelloWord';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 const Stack = createNativeStackNavigator();
 
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <Stack.Navigator >
+      <Stack.Navigator>
         <Stack.Screen name="HelloWord" component={HelloWord} />
       </Stack.Navigator>
     </NavigationContainer>
