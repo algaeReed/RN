@@ -1,29 +1,22 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HelloWord from './HelloWord';
+import Home from '@src/Home';
+import Mine from '@src/Mine';
 
-const Stack = createNativeStackNavigator();
-
+const Tab = createBottomTabNavigator();
 function App(): React.JSX.Element {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="HelloWord" component={HelloWord} />
-      </Stack.Navigator>
+    <NavigationContainer independent={true}>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Mine" component={Mine} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
-
 const styles = StyleSheet.create({});
 
 export default App;
